@@ -9,7 +9,7 @@ all: $(DOTVIMRC)
 $(DOTVIM):
 	mkdir -p $(DOTVIM)
 
-$(DOTVIMRC): $(DOTVIM)
+$(DOTVIMRC): $(DOTVIM) .vimrc
 	mkdir -p $(DOTVIM)/backup
 	mkdir -p $(DOTVIM)/swap
 	mkdir -p $(DOTVIM)/undo
