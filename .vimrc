@@ -57,6 +57,7 @@ set background=dark
 set tabstop=4
 set shiftwidth=4
 set expandtab
+autocmd FileType make setlocal noexpandtab
 
 " Custom keybindings
 nmap <F8>  :TagbarToggle<CR>
