@@ -56,6 +56,8 @@ endif
 syntax on
 set background=dark
 set scrolloff=999
+
+" Indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -84,6 +86,10 @@ let g:gitgutter_sign_column_always = 1
 " 80 character highlight
 highlight ColorColumn ctermbg=235
 let &colorcolumn=join(range(81,999),",")
+
+" Highlight current line
+highlight CursorLine cterm=NONE ctermbg=236
+set cursorline
 
 " Keep swap files in separate directory
 set backupdir=~/.vim/backup//
