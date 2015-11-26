@@ -64,6 +64,15 @@ autocmd FileType make setlocal noexpandtab
 nmap <F8>  :TagbarToggle<CR>
 nmap <F9>  :tabp<CR>
 nmap <F10> :tabn<CR>
+" Disable arrow keys
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 " Gutter
 set nu
