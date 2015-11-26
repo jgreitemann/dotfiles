@@ -27,11 +27,12 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'user/L9', {'name': 'newL9'}
 
 " My plugins
-Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,7 +49,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-if $COLORTERM == 'gnome-terminal'
+if !has('gui_running')
   set t_Co=256
 endif
 
@@ -56,6 +57,23 @@ endif
 syntax on
 set background=dark
 set scrolloff=999
+
+" Configure lightline
+set laststatus=2
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ ['mode', 'paste'],
+    \             ['fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component': {
+    \   'fugitive' : '%{exists("*fugitive#head")?fugitive#head():""}',
+    \ },
+    \ 'component_visible_condition': {
+    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+    \ }
+    \ }
+set noshowmode
 
 " Indentation
 set tabstop=4
