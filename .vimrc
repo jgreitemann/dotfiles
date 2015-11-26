@@ -54,6 +54,7 @@ endif
 " General settings
 syntax on
 set background=dark
+set scrolloff=999
 set tabstop=4
 set shiftwidth=4
 set expandtab
