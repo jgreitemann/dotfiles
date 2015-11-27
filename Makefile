@@ -1,10 +1,11 @@
 CP=cp
 DOTVIM=$(HOME)/.vim
 DOTVIMRC=$(HOME)/.vimrc
+TMUXCONF=$(HOME)/.tmux.conf
 
 .PHONY: Vundle
 
-all: $(DOTVIMRC)
+all: $(DOTVIMRC) $(TMUXCONF)
 
 $(DOTVIM):
 	mkdir -p $(DOTVIM)
@@ -19,4 +20,7 @@ $(DOTVIMRC): $(DOTVIM) .vimrc
 Vundle: $(DOTVIM)
 	mkdir -p $(DOTVIM)/bundle
 	git clone https://github.com/VundleVim/Vundle.vim.git $(DOTVIM)/bundle/Vundle.vim
+
+$(TMUXCONF):
+	$(CP) .tmux.conf $(TMUXCONF)
 
