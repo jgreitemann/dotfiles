@@ -33,6 +33,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'derekwyatt/vim-scala'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
