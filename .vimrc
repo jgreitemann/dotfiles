@@ -118,3 +118,12 @@ set undodir=~/.vim/undo//
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
 set updatetime=1000 "1 sec"
 au CursorHold,CursorHoldI * silent! checktime
+
+" Delete trailing whitespaces
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
