@@ -41,6 +41,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Color
 Plugin 'guns/xterm-color-table.vim'
+Plugin 'nanotech/jellybeans.vim'
 
 " Language support
 Plugin 'majutsushi/tagbar'
@@ -71,13 +72,14 @@ endif
 " General settings
 syntax on
 set background=dark
+colorscheme jellybeans
 set scrolloff=999
 set incsearch
 
 " Configure lightline
 set laststatus=2
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'jellybeans',
     \ 'active': {
     \   'left': [ ['mode', 'paste'],
     \             ['fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -117,8 +119,9 @@ set rnu
 highlight LineNr ctermfg=darkgrey
 let g:gitgutter_sign_column_always = 1
 
-" 80 character highlight
-highlight ColorColumn ctermbg=235
+" Background colors
+highlight Normal ctermbg=234
+highlight ColorColumn ctermbg=233
 let &colorcolumn=join(range(81,999),",")
 
 " Highlight current line
