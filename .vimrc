@@ -58,6 +58,7 @@ endif
 syntax on
 set background=dark
 set scrolloff=999
+set incsearch
 
 " Configure lightline
 set laststatus=2
