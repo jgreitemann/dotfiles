@@ -26,14 +26,28 @@ Plugin 'VundleVim/Vundle.vim'
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
 
-" My plugins
-Plugin 'airblade/vim-gitgutter'
-Plugin 'guns/xterm-color-table.vim'
-Plugin 'majutsushi/tagbar'
+" Operators, motions, and text objects
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-line'
+
+" Git support
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+
+" Color
+Plugin 'guns/xterm-color-table.vim'
+
+" Language support
+Plugin 'majutsushi/tagbar'
 Plugin 'derekwyatt/vim-scala'
+ " Misc
+Plugin 'itchyny/lightline.vim'
+Plugin 'christoomey/vim-system-copy'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
