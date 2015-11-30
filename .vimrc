@@ -44,13 +44,14 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+
 " General settings
 syntax on
 set background=dark
-colorscheme jellybeans
 set scrolloff=999
 set incsearch
 let g:tagbar_autoclose = 1
+
 
 " Configure lightline
 set laststatus=2
@@ -69,11 +70,13 @@ let g:lightline = {
     \ }
 set noshowmode
 
+
 " Indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
 autocmd FileType make setlocal noexpandtab
+
 
 " Custom keybindings
 nmap <F8>  :TagbarOpen f<CR>
@@ -89,35 +92,45 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+
 " Gutter
 set nu
 set rnu
 highlight LineNr ctermfg=darkgrey
 let g:gitgutter_sign_column_always = 1
 
+
 " Background colors
+
+" Highlight trailing whitespaces
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red
+colorscheme jellybeans
 highlight Normal ctermbg=234
 highlight ColorColumn ctermbg=233
 let &colorcolumn=join(range(81,999),",")
+match TrailingWhitespace /\s\+$/
 
 " Highlight current line
 highlight CursorLine cterm=NONE ctermbg=236
 set cursorline
+
 
 " Keep swap files in separate directory
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+
 " Run checktime in buffers, but avoiding the "Command Line" (q:) window
 set updatetime=1000 "1 sec"
 au CursorHold,CursorHoldI * silent! checktime
 
+
 " Delete trailing whitespaces
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" fun! <SID>StripTrailingWhitespaces()
+"     let l = line(".")
+"     let c = col(".")
+"     %s/\s\+$//e
+"     call cursor(l, c)
+" endfun
+" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
