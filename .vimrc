@@ -50,6 +50,7 @@ set background=dark
 colorscheme jellybeans
 set scrolloff=999
 set incsearch
+let g:tagbar_autoclose = 1
 
 " Configure lightline
 set laststatus=2
@@ -75,7 +76,7 @@ set expandtab
 autocmd FileType make setlocal noexpandtab
 
 " Custom keybindings
-nmap <F8>  :TagbarToggle<CR>
+nmap <F8>  :TagbarOpen f<CR>
 nmap <F9>  :tabp<CR>
 nmap <F10> :tabn<CR>
 " Disable arrow keys
