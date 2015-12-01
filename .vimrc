@@ -108,7 +108,7 @@ colorscheme jellybeans
 highlight Normal ctermbg=234
 highlight ColorColumn ctermbg=233
 let &colorcolumn=join(range(81,999),",")
-match TrailingWhitespace /\s\+$/
+autocmd FileType * match TrailingWhitespace /\s\+$/
 
 " Highlight current line
 highlight CursorLine cterm=NONE ctermbg=236
