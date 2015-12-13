@@ -53,6 +53,10 @@ set incsearch
 let g:tagbar_autoclose = 1
 
 
+" GVim
+set guifont=Source\ Code\ Pro\ 11
+
+
 " Configure lightline
 set laststatus=2
 let g:lightline = {
