@@ -29,6 +29,7 @@ Plugin 'nanotech/jellybeans.vim'
 " Language support
 Plugin 'majutsushi/tagbar'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'rust-lang/rust.vim'
 
  " Misc
 Plugin 'itchyny/lightline.vim'
