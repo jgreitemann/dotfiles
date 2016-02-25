@@ -114,6 +114,8 @@ highlight Normal ctermbg=234
 highlight ColorColumn ctermbg=233
 let &colorcolumn=join(range(81,999),",")
 autocmd FileType * match TrailingWhitespace /\s\+$/
+autocmd FileType tex highlight clear ColorColumn
+autocmd FileType tex highlight clear CursorLine
 
 " Highlight current line
 highlight CursorLine cterm=NONE ctermbg=236
