@@ -52,6 +52,7 @@ set background=dark
 set scrolloff=999
 set incsearch
 let g:tagbar_autoclose = 1
+autocmd FileType tex set spell
 
 
 " GVim
