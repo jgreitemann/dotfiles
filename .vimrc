@@ -82,6 +82,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 autocmd FileType make setlocal noexpandtab
+autocmd FileType tex set tabstop=2
+autocmd FileType tex set shiftwidth=2
 
 
 " Custom keybindings
