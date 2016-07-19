@@ -1,7 +1,7 @@
 ; Install packages if not installed already
 
 ; list the packages you want
-(setq package-list '(evil evil-surround centered-cursor-mode linum-relative hl-line magit flatland-theme))
+(setq package-list '(evil evil-surround centered-cursor-mode linum-relative hl-line magit flatland-theme diff-hl))
 
 ; list the repositories containing them
 (require 'package)
@@ -51,6 +51,11 @@
 (global-hl-line-mode 1)
 
 (require 'magit)
+
+(require 'diff-hl)
+(global-diff-hl-mode 1)
+(diff-hl-flydiff-mode 1)
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ; Use powerline from github.com/Dewdrops/powerline
 (add-to-list 'load-path "~/.emacs.d/vendor/powerline")
