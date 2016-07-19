@@ -1,7 +1,15 @@
 ; Install packages if not installed already
 
 ; list the packages you want
-(setq package-list '(evil evil-surround centered-cursor-mode linum-relative hl-line magit flatland-theme diff-hl))
+(setq package-list '(evil
+		     evil-surround
+		     centered-cursor-mode
+		     linum-relative
+		     hl-line
+		     magit
+		     flatland-theme
+		     diff-hl
+		     evil-commentary))
 
 ; list the repositories containing them
 (require 'package)
@@ -36,6 +44,9 @@
 
 (require 'evil-surround)
 (global-evil-surround-mode 1)
+
+(require 'evil-commentary)
+(evil-commentary-mode)
 
 (require 'flatland-theme)
 (load-theme 'flatland t)
