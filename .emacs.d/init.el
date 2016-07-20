@@ -38,6 +38,11 @@
 
 (show-paren-mode 1)
 
+; save backup files to a dedicated location
+(if (file-directory-p "~/.emacs.d/backup")
+    (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+    (message "Directory does not exist: ~/.emacs.d/backup"))
+
 ; sane automatic indentation
 (setq c-default-style "linux"
       c-basic-offset 4)

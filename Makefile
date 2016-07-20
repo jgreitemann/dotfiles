@@ -4,9 +4,15 @@ DOTVIMRC=$(HOME)/.vimrc
 TMUXCONF=$(HOME)/.tmux.conf
 EMACSDIR=$(HOME)/.emacs.d
 
-.PHONY: PluginInstall
+.PHONY: vim tmux emacs PluginInstall
 
-all: $(DOTVIMRC) $(DOTVIM)/bundle/Vundle.vim $(TMUXCONF) $(EMACSDIR)/init.el $(EMACSDIR)/vendor/powerline PluginInstall
+all: vim tmux emacs
+
+vim: $(DOTVIMRC) $(DOTVIM)/bundle/Vundle.vim PluginInstall
+
+tmux: $(TMUXCONF)
+
+emacs: $(EMACSDIR)/init.el $(EMACSDIR)/backup $(EMACSDIR)/vendor/powerline
 
 $(DOTVIM):
 	mkdir -p $(DOTVIM)
@@ -45,6 +51,9 @@ $(EMACSDIR)/init.el: $(EMACSDIR) .emacs.d/init.el
 $(EMACSDIR)/vendor: $(EMACSDIR)
 	mkdir -p $(EMACSDIR)/vendor
 
+$(EMACSDIR)/backup: $(EMACSDIR)
+	mkdir -p $(EMACSDIR)/backup
+
 $(EMACSDIR)/vendor/powerline: $(EMACSDIR)/vendor
 	if [ -d $(EMACSDIR)/vendor/powerline ]; then \
 		cd $(EMACSDIR)/vendor/powerline; \
@@ -53,5 +62,4 @@ $(EMACSDIR)/vendor/powerline: $(EMACSDIR)/vendor
 		git clone https://github.com/Dewdrops/powerline.git \
 			    $(EMACSDIR)/vendor/powerline; \
 	fi
-
 
