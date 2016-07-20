@@ -40,7 +40,11 @@
 
 ; save backup files to a dedicated location
 (if (file-directory-p "~/.emacs.d/backup")
-    (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+    (progn
+      (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+      (setq auto-save-file-name-transforms
+	    '((".*" "~/.emacs.d/backup" t)))
+    )
     (message "Directory does not exist: ~/.emacs.d/backup"))
 
 ; sane automatic indentation
