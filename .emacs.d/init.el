@@ -38,6 +38,10 @@
 
 (show-paren-mode 1)
 
+; sane automatic indentation
+(setq c-default-style "linux"
+      c-basic-offset 4)
+
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-11"))
 (set-face-attribute 'default t :font "Source Code Pro-11")
 
