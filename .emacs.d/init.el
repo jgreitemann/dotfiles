@@ -86,6 +86,7 @@
 (global-centered-cursor-mode +1)
 
 (require 'linum-relative)
+(setq linum-relative-current-symbol "")
 (linum-relative-global-mode 1)
 
 (require 'hl-line)
