@@ -3,6 +3,8 @@
 ; list the packages you want
 (setq package-list '(evil
 		     evil-surround
+		     evil-leader
+		     helm
 		     centered-cursor-mode
 		     linum-relative
 		     hl-line
@@ -38,6 +40,18 @@
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-11"))
 (set-face-attribute 'default t :font "Source Code Pro-11")
+
+(require 'helm)
+
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+  "," 'helm-mini
+  "." 'switch-to-next-buffer
+  "m" 'switch-to-prev-buffer
+  "g" 'magit-status
+)
 
 (require 'evil)
 (evil-mode 1)
