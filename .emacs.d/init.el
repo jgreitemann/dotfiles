@@ -10,6 +10,7 @@
 		     hl-line
 		     magit
 		     flatland-theme
+		     fill-column-indicator
 		     diff-hl
 		     evil-commentary))
 
@@ -53,6 +54,9 @@
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-11"))
 (set-face-attribute 'default t :font "Source Code Pro-11")
+
+(require 'fill-column-indicator)
+(add-hook 'after-change-major-mode-hook 'fci-mode)
 
 (require 'helm)
 
