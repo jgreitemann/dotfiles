@@ -56,6 +56,7 @@
 (set-face-attribute 'default t :font "Source Code Pro-11")
 
 (require 'fill-column-indicator)
+(setq fci-rule-column 80)
 (add-hook 'after-change-major-mode-hook 'fci-mode)
 
 (require 'helm)
