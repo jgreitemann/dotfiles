@@ -12,6 +12,7 @@
 		     flatland-theme
 		     fill-column-indicator
 		     diff-hl
+		     cmake-mode
 		     evil-commentary))
 
 ; list the repositories containing them
@@ -100,6 +101,8 @@
 (global-diff-hl-mode 1)
 (diff-hl-flydiff-mode 1)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+
+(require 'cmake-mode)
 
 ; Use powerline from github.com/Dewdrops/powerline
 (add-to-list 'load-path "~/.emacs.d/vendor/powerline")
