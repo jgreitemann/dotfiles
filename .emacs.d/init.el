@@ -51,6 +51,8 @@
     (message "Directory does not exist: ~/.emacs.d/backup"))
 
 ; sane automatic indentation
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 (setq c-default-style "linux"
       c-basic-offset 4)
 
