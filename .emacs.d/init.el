@@ -13,6 +13,7 @@
 		     fill-column-indicator
 		     diff-hl
 		     cmake-mode
+             markdown-mode
 		     frame-fns
 		     evil-commentary))
 
