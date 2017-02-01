@@ -3,16 +3,15 @@ DOTVIM=$(HOME)/.vim
 DOTVIMRC=$(HOME)/.vimrc
 TMUXCONF=$(HOME)/.tmux.conf
 EMACSDIR=$(HOME)/.emacs.d
+DOTSPACEMACS=$(HOME)/.spacemacs
 
-.PHONY: vim tmux emacs PluginInstall
+.PHONY: vim tmux spacemacs-install PluginInstall
 
-all: vim tmux emacs
+all: vim tmux $(DOTSPACEMACS)
 
 vim: $(DOTVIMRC) $(DOTVIM)/bundle/Vundle.vim PluginInstall
 
 tmux: $(TMUXCONF)
-
-emacs: $(EMACSDIR)/init.el $(EMACSDIR)/backup
 
 $(DOTVIM):
 	mkdir -p $(DOTVIM)
@@ -42,11 +41,9 @@ PluginInstall:
 $(TMUXCONF): .tmux.conf
 	$(CP) .tmux.conf $(TMUXCONF)
 
-$(EMACSDIR):
-	mkdir -p $(EMACSDIR)
+spacemacs-install:
+	rm -rf $(EMACSDIR)
+	git clone https://github.com/syl20bnr/spacemacs $(EMACSDIR)
 
-$(EMACSDIR)/init.el: $(EMACSDIR) .emacs.d/init.el
-	$(CP) .emacs.d/init.el $(EMACSDIR)/init.el
-
-$(EMACSDIR)/backup: $(EMACSDIR)
-	mkdir -p $(EMACSDIR)/backup
+$(DOTSPACEMACS): .spacemacs
+	$(CP) .spacemacs $(DOTSPACEMACS)
