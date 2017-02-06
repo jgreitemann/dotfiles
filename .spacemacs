@@ -42,6 +42,7 @@ values."
      emacs-lisp
      git
      markdown
+     python
      latex
      ;; org
      ;; (shell :variables
