@@ -330,6 +330,18 @@ you should place your code here."
   ;; magit status shortcut
   (evil-leader/set-key
     "g" 'magit-status)
+
+  ;; custom AucTeX defines
+  (setq TeX-engine-alist 
+        '(
+          (xetex "XeTeX" 
+                 "xetex --file-line-error" 
+                 "xelatex --file-line-error" 
+                 "xetex")
+          (xetex_sh "XeTeX shell escape" 
+                    "xetex --file-line-error --shell-escape" 
+                    "xelatex --file-line-error --shell-escape" 
+                    "xetex")))
   )
 
 (defun iwb ()
